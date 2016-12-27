@@ -1,3 +1,4 @@
+package ch.bfh.ad.main;
 public class Main {
 
 	public static void main(String[] args) {

@@ -1,3 +1,4 @@
+package ch.bfh.ad.main;
 public class ParseException extends Exception {
 	private static final long serialVersionUID = 1L;
 	int position = 0;

@@ -1,3 +1,4 @@
+package ch.bfh.ad.main;
 /**
  * An Evaluator for polynomials of the form 2x(2x^2 + 1) + x^3
  */
