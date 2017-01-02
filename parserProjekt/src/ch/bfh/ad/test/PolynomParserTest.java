@@ -21,6 +21,10 @@ public class PolynomParserTest {
 			pString = "10x^3 + 4(2x + 3x^5) + 2x^2";
 			pString = pString.replaceAll("\\s", "");
 			PolynomParser.createParser().parse(pString);
+			
+			pString = "3x^2 + 10x(2 + 4x^3)";
+			pString = pString.replaceAll("\\s", "");
+			PolynomParser.createParser().parse(pString);
 		} catch (ParseException e) {
 			fail("Exception while parsing \"" + pString + "\"\n" + e.getMessage());
 		}
@@ -56,6 +60,17 @@ public class PolynomParserTest {
 			assertEquals(141, res);
 			res = Evaluator.createEvaluator().evaluate(pString, 4);
 			assertEquals(328, res);
+			
+			
+			pString = "3x^2 + 10x(2 + 4x^3)";
+			pString = pString.replaceAll("\\s", "");
+			PolynomParser.createParser().parse(pString);
+			res = Evaluator.createEvaluator().evaluate(pString, 2);
+			PolynomParser.createParser().parse(pString);
+			res = Evaluator.createEvaluator().evaluate(pString, 3);
+			assertEquals(3327, res);
+			res = Evaluator.createEvaluator().evaluate(pString, 4);
+			assertEquals(10368, res);
 		} catch (ParseException e) {
 			fail("Exception while parsing \"" + pString + "\"\n" + e.getMessage());
 		}
